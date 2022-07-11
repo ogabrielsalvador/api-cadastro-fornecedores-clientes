@@ -7,8 +7,8 @@
 
     const app = express()
 
-    const rota_fornecedor = require('./routes/fornecedor')       // PRECISO DECIDIR AINDA QUAL MELHOR FORMA DE ROTA
-    const rota_produto = require('./routes/produto')             // ROTAS DE PRODUTO E FORNECEDOR, JUNTO OU SEPARADO ???
+    const rota_fornecedor = require('./routes/fornecedor')
+    const rota_produto = require('./routes/produto')
     
     const mongoose = require('mongoose')
 
