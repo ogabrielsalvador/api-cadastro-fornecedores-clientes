@@ -41,7 +41,7 @@
 // Rotas
     // Home
         app.get('/', (req, res) => {
-            Produto.find().lean().then((produtos) => {
+            Produto.find().lean().sort({data: 'desc'}).then((produtos) => {
                 return res.json(produtos)
             }).catch((err) => {
                 res.send('Erro ao listar os produtos')

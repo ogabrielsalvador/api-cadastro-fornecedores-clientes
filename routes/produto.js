@@ -7,14 +7,6 @@ const Produto = mongoose.model('produtos')
 
 const validaCNPJ = require('../control/validaCNPJ')
 
-// Listando todos os produtos
-router.get('/', (req, res) => {
-    Produto.find().lean().sort({data: 'desc'}).then((produtos) => {
-        return res.json(produtos)
-    }).catch((err) => {
-        res.send('Erro ao listar os produtos<br>' + err)
-    })
-})
 
 // Listando todos os produtos de um mesmo fornecedor
 router.get('/:cnpj', (req, res) => {
