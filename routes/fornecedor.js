@@ -9,7 +9,7 @@ const validaCNPJ = require('../control/validaCNPJ')
 
 // Listando todos os fornecedores
 router.get('/', (req, res) => {
-    Fornecedor.find().lean().sort({data: 'desc'}).then((fornecedores) => {
+    Fornecedor.find().lean().sort({nome: 'asc'}).then((fornecedores) => {
         return res.json(fornecedores)
     }).catch((err) => {
         res.send('Erro ao listar os fornecedores<br>' + err)

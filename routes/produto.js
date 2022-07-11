@@ -10,7 +10,7 @@ const validaCNPJ = require('../control/validaCNPJ')
 
 // Listando todos os produtos de um mesmo fornecedor
 router.get('/:cnpj', (req, res) => {
-    Produto.find({cnpj:req.params.cnpj}).lean().then((produtos) => {
+    Produto.find({cnpj:req.params.cnpj}).lean().sort({nome: 'asc'}).then((produtos) => {
         return res.json(produtos)
     }).catch((err) => {
         res.send('Erro ao listar os produtos do fornecedor informado<br>' + err)
